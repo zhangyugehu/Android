@@ -10,18 +10,32 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainHolder(val view: TextView) : FixedHolder(view)
+class MainHolder(val view: TextView) : RecyclerView.ViewHolder(view)
 
-class MainAdapter(private val context: Context, private val data: List<String>): LoadMoreRecyclerView.Adapter<String, MainHolder>(context, data) {
-    override fun onFixedCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
+class MainAdapter(private val context: Context, private val data: List<String>): RecyclerView.Adapter<MainHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
         return MainHolder(TextView(context))
     }
 
-    override fun onFixedBindViewHolder(holder: MainHolder, position: Int) {
+    override fun onBindViewHolder(holder: MainHolder, position: Int) {
         holder.view.text = data[position]
     }
 
+    override fun getItemCount(): Int {
+        return data.size
+    }
+
 }
+//class MainAdapter(private val context: Context, private val data: List<String>): LoadMoreRecyclerView.Adapter<String, MainHolder>(context, data) {
+//    override fun onFixedCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
+//        return MainHolder(TextView(context))
+//    }
+//
+//    override fun onFixedBindViewHolder(holder: MainHolder, position: Int) {
+//        holder.view.text = data[position]
+//    }
+//
+//}
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,7 +56,7 @@ class MainActivity : AppCompatActivity() {
     private val listView: LoadMoreRecyclerView by lazy {
         val view:LoadMoreRecyclerView = findViewById(R.id.list_view)
         view.layoutManager = LinearLayoutManager(this)
-        view.adapter = MainAdapter(this, (0..100).map { it1 -> "item-$it1" })
+        view.adapter = AdapterWrapper(MainAdapter(this, (0..100).map { it1 -> "item-$it1" }))
         view.setOnRefreshListener(onRefresh)
         view.setOnLoadMoreListener(onLoadMore)
         view
