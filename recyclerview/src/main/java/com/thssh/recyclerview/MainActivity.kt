@@ -1,10 +1,12 @@
 package com.thssh.recyclerview
 
 import android.content.Context
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,7 +16,11 @@ class MainHolder(val view: TextView) : RecyclerView.ViewHolder(view)
 
 class MainAdapter(private val context: Context, private val data: List<String>): RecyclerView.Adapter<MainHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHolder {
-        return MainHolder(TextView(context))
+        val textView = TextView(context)
+        textView.height = 100
+        textView.setTextColor(Color.BLACK)
+        textView.gravity = Gravity.CENTER_VERTICAL
+        return MainHolder(textView)
     }
 
     override fun onBindViewHolder(holder: MainHolder, position: Int) {
@@ -56,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private val listView: LoadMoreRecyclerView by lazy {
         val view:LoadMoreRecyclerView = findViewById(R.id.list_view)
         view.layoutManager = LinearLayoutManager(this)
-        view.adapter = AdapterWrapper(MainAdapter(this, (0..100).map { it1 -> "item-$it1" }))
+        view.adapter = AdapterWrapper(MainAdapter(this, (0..20).map { it1 -> "item-$it1" }))
         view.setOnRefreshListener(onRefresh)
         view.setOnLoadMoreListener(onLoadMore)
         view

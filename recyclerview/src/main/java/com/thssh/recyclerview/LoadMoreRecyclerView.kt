@@ -1,9 +1,12 @@
 package com.thssh.recyclerview
 
 import android.content.Context
+import android.graphics.Color
 import android.util.AttributeSet
+import android.view.Gravity
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -85,11 +88,15 @@ class AdapterWrapper<H: RecyclerView.ViewHolder, in T: RecyclerView.Adapter<H>>(
         if (viewType == VIEW_TYPE_REFRESH) {
             val textView = TextView(parent.context)
             textView.height = 100
+            textView.setTextColor(Color.LTGRAY)
+            textView.gravity = Gravity.CENTER
             textView.text = "refresh..."
             return StateHolder(textView)
         } else if (viewType == VIEW_TYPE_LOAD_MORE) {
             val textView = TextView(parent.context)
             textView.height = 100
+            textView.setTextColor(Color.LTGRAY)
+            textView.gravity = Gravity.CENTER
             textView.text = "loading..."
             return StateHolder(textView)
         }
@@ -99,7 +106,7 @@ class AdapterWrapper<H: RecyclerView.ViewHolder, in T: RecyclerView.Adapter<H>>(
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> VIEW_TYPE_REFRESH
-            delegate.itemCount -> VIEW_TYPE_LOAD_MORE;
+            itemCount - 1 -> VIEW_TYPE_LOAD_MORE;
             else -> VIEW_ITEM
         }
     }
@@ -118,6 +125,18 @@ class AdapterWrapper<H: RecyclerView.ViewHolder, in T: RecyclerView.Adapter<H>>(
 
     override fun getItemCount(): Int {
         return delegate.itemCount + 1
+    }
+
+    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
+        super.onAttachedToRecyclerView(recyclerView)
+        if (recyclerView.layoutManager is GridLayoutManager) {
+            val gridManager = recyclerView.layoutManager as GridLayoutManager
+            gridManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    return if (getItemViewType(position) == VIEW_TYPE_REFRESH || getItemViewType(position) == VIEW_TYPE_LOAD_MORE) gridManager.spanCount else 1
+                }
+            }
+        }
     }
 }
 
