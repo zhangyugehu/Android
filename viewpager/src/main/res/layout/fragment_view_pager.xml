@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/refresh_controller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.viewpager.widget.TwoChildScrollLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:textSize="20sp"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:text="SwipeRefreshLayout + ViewPager + RecyclerView"
+            android:background="@color/purple_700" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                app:tabContentStart="20dp"
+                app:tabMode="auto">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_item_home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="首页" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_item_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="分类" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_item_setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="设置" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <com.example.viewpager.NestedViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </com.example.viewpager.widget.TwoChildScrollLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
