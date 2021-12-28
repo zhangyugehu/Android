@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".pages.SimpleFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_scrollFlags="snap"
+            android:src="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:text="@string/app_name" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:text="阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多阿萨打算多啊实打实大大多所啊实打实大大所大多"
+            android:layout_width="match_parent"
+            android:textSize="26sp"
+            android:layout_height="wrap_content" />
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

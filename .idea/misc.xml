@@ -5,6 +5,8 @@
       <map>
         <entry key="../../../../../../layout/custom_preview.xml" value="0.2015625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16576086956521738" />
+        <entry key="behavior/src/main/res/layout/activity_main.xml" value="0.21197916666666666" />
+        <entry key="behavior/src/main/res/layout/fragment_siample.xml" value="0.21197916666666666" />
         <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.11803444782168186" />
         <entry key="viewpager/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="viewpager/src/main/res/layout/fragment_category.xml" value="0.37604166666666666" />
