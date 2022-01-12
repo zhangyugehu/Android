@@ -13,9 +13,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/behavior" />
+            <option value="$PROJECT_DIR$/commonlib" />
             <option value="$PROJECT_DIR$/javaLib" />
             <option value="$PROJECT_DIR$/recyclerview" />
             <option value="$PROJECT_DIR$/swipe_back" />
+            <option value="$PROJECT_DIR$/swipe_back_2" />
             <option value="$PROJECT_DIR$/utilities" />
             <option value="$PROJECT_DIR$/viewpager" />
           </set>

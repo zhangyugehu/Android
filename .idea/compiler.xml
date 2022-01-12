@@ -4,8 +4,10 @@
     <bytecodeTargetLevel target="1.7">
       <module name="Example.app" target="11" />
       <module name="Example.behavior" target="11" />
+      <module name="Example.commonlib" target="11" />
       <module name="Example.recyclerview" target="11" />
       <module name="Example.swipe_back" target="11" />
+      <module name="Example.swipe_back_2" target="11" />
       <module name="Example.utilities" target="11" />
       <module name="Example.viewpager" target="11" />
     </bytecodeTargetLevel>

@@ -7,6 +7,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.thssh.commonlib.PopHelper;
+
 public class SecondActivity extends BaseActivity {
 
     private TextView textView;

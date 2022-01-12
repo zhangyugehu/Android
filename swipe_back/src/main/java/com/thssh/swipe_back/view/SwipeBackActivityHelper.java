@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.app.ActivityOptions;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.thssh.swipe_back.BuildConfig;
 import com.thssh.swipe_back.R;
 
 import java.lang.reflect.Method;
@@ -23,6 +25,7 @@ public class SwipeBackActivityHelper {
 
     @SuppressWarnings("deprecation")
     public void onActivityCreate() {
+        if (BuildConfig.DEBUG) Log.d("SwipeBackLayoutTag", "onActivityCreate: ");
         mActivity.getWindow().setBackgroundDrawable(new ColorDrawable(0));
         mActivity.getWindow().getDecorView().setBackgroundDrawable(null);
         mSwipeBackLayout = (SwipeBackLayout) LayoutInflater.from(mActivity).inflate(R.layout.swipeback_layout, null);
@@ -30,13 +33,25 @@ public class SwipeBackActivityHelper {
             @Override
             public void onScrollStateChange(int state, float scrollPercent) {
                 if (state == SwipeBackLayout.STATE_IDLE && scrollPercent == 0) {
-                    convertActivityFromTranslucent();
+                    if (BuildConfig.DEBUG) Log.d("SwipeBackLayoutTag", "convertActivityFromTranslucent: ");
+
+//                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                        mActivity.setTranslucent(false);
+//                    } else {
+//                        convertActivityFromTranslucent();
+//                    }
                 }
             }
 
             @Override
             public void onEdgeTouch(int edgeFlag) {
-                convertActivityToTranslucent();
+                if (BuildConfig.DEBUG) Log.d("SwipeBackLayoutTag", "convertActivityToTranslucent: ");
+
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//                    mActivity.setTranslucent(true);
+//                } else {
+//                    convertActivityToTranslucent();
+//                }
             }
 
             @Override
@@ -47,6 +62,7 @@ public class SwipeBackActivityHelper {
     }
 
     public void onPostCreate() {
+        if (BuildConfig.DEBUG) Log.d("SwipeBackLayoutTag", "onPostCreate: ");
         mSwipeBackLayout.attachToActivity(mActivity);
         convertActivityFromTranslucent();
     }
@@ -96,7 +112,6 @@ public class SwipeBackActivityHelper {
      * This call has no effect on non-translucent activities or on activities
      * with the {@link android.R.attr#windowIsFloating} attribute.
      */
-    @SuppressLint("NewApi")
     public void convertActivityToTranslucent() {
         try {
             Class<?>[] classes = Activity.class.getDeclaredClasses();
@@ -106,19 +121,13 @@ public class SwipeBackActivityHelper {
                     translucentConversionListenerClazz = clazz;
                 }
             }
-            if (Build.VERSION.SDK_INT < 21) {
-                Method method = Activity.class.getDeclaredMethod("convertToTranslucent",
-                        translucentConversionListenerClazz);
-                method.setAccessible(true);
-                method.invoke(mActivity, new Object[]{null});
-            } else {
-                Method method = Activity.class.getDeclaredMethod("convertToTranslucent",
-                        translucentConversionListenerClazz,
-                        ActivityOptions.class);
-                method.setAccessible(true);
-                method.invoke(mActivity, new Object[]{null, null});
-            }
+            Method method = Activity.class.getDeclaredMethod("convertToTranslucent",
+                    translucentConversionListenerClazz,
+                    ActivityOptions.class);
+            method.setAccessible(true);
+            method.invoke(mActivity, new Object[]{null, null});
         } catch (Throwable t) {
+            t.printStackTrace();
         }
     }
 }

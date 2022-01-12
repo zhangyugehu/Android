@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="topTipsAnim" parent="android:Animation" >
+        <item name="android:windowEnterAnimation">@anim/toppopup_in</item>
+        <item name="android:windowExitAnimation">@anim/toppopup_out</item>
+    </style>
+</resources>

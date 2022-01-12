@@ -1,4 +1,4 @@
-package com.thssh.swipe_back;
+package com.thssh.commonlib;
 
 import static android.content.Context.WINDOW_SERVICE;
 
