@@ -8,6 +8,10 @@
         <entry key="behavior/src/main/res/layout/activity_main.xml" value="0.21197916666666666" />
         <entry key="behavior/src/main/res/layout/fragment_siample.xml" value="0.21197916666666666" />
         <entry key="recyclerview/src/main/res/layout/activity_main.xml" value="0.11803444782168186" />
+        <entry key="swipe_back/src/main/res/layout/activity_main.xml" value="0.28229166666666666" />
+        <entry key="swipe_back/src/main/res/layout/activity_second.xml" value="0.24322916666666666" />
+        <entry key="swipe_back/src/main/res/layout/swipeback_layout.xml" value="0.28229166666666666" />
+        <entry key="swipe_back/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.165625" />
         <entry key="viewpager/src/main/res/layout/activity_main.xml" value="0.165" />
         <entry key="viewpager/src/main/res/layout/fragment_category.xml" value="0.37604166666666666" />
         <entry key="viewpager/src/main/res/layout/fragment_main.xml" value="0.1703125" />

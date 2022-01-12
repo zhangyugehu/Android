@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SwipeBackLayout">
+        <item name="edge_size">100dip</item>
+        <item name="shadow_left">@drawable/shadow_left</item>
+        <item name="shadow_right">@drawable/shadow_right</item>
+        <item name="shadow_bottom">@drawable/shadow_bottom</item>
+    </style>
+    <style name="AppTheme" parent="android:Theme.Light" />
+
+    <style name="topTipsAnim" parent="android:Animation" >
+        <item name="android:windowEnterAnimation">@anim/toppopup_in</item>
+        <item name="android:windowExitAnimation">@anim/toppopup_out</item>
+    </style>
+</resources>
